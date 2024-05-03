@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "CLinkedList.c"
+#include "CLinkedList.h"
 
 int main(void)
 {

@@ -15,6 +15,6 @@ int main(void)
 	// 데이터 꺼내기 ///////
 	while(!SIsEmpty(&stack))
 		printf("%d ", SPop(&stack)); 
-
+					
 	return 0;
 }

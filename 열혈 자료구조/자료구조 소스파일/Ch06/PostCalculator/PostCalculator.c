@@ -17,7 +17,7 @@ int EvalRPNExp(char exp[])
 
 		if(isdigit(tok))
 		{
-			SPush(&stack, tok - '0');     // 숫자로 변환하여 PUSH!
+			SPush(&stack, tok - '0');     // 숫자로 변환하여 PUSH! -'0'을 하면 문자를 정수형으로 변환.(아스키코드))
 		}
 		else
 		{
@@ -27,9 +27,9 @@ int EvalRPNExp(char exp[])
 			switch(tok)
 			{
 			case '+':
-				SPush(&stack, op1+op2);
+				SPush(&stack, op1+op2);	
 				break;
-			case '-':
+			case '-':	
 				SPush(&stack, op1-op2);
 				break;
 			case '*':

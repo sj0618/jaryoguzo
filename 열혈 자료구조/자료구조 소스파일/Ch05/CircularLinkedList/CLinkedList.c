@@ -10,28 +10,28 @@ void ListInit(List * plist)
 	plist->numOfData = 0;
 }
 
-void LInsertFront(List * plist, Data data)
+void LInsertFront(List * plist, Data data)					//리스트의 '앞'에 자료 삽입
 {
-	Node * newNode = (Node*)malloc(sizeof(Node));
-	newNode->data = data;
+	Node * newNode = (Node*)malloc(sizeof(Node));			//새 노드 할당
+	newNode->data = data;									//새 노드에 데이터 할당
 
-	if(plist->tail == NULL) 
+	if(plist->tail == NULL) 								//만약 tail이 비어있다면		
 	{
-		plist->tail = newNode;
-		newNode->next = newNode;
+		plist->tail = newNode;								//tail은 새 노드
+		newNode->next = newNode;							//새 노드의 다음도 새 노드(동일노드) -> 원형 링크드이기 때문
 	}
-	else
+	else													//tail에 뭔가 있다면
 	{
-		newNode->next = plist->tail->next;
-		plist->tail->next = newNode;
+		newNode->next = plist->tail->next;					//새 노드의 다음은 tail의 다음. tail의 다음 == head head를 tail로 표현
+		plist->tail->next = newNode;						//tail의 다음은 뉴노드.				 == head ;
 	}
 
 	(plist->numOfData)++;
 }
 
-void LInsert(List * plist, Data data)
+void LInsert(List * plist, Data data)						//리스트의 뒤에삷입
 {
-	Node * newNode = (Node*)malloc(sizeof(Node));
+	Node * newNode = (Node*)malloc(sizeof(Node));			
 	newNode->data = data;
 
 	if(plist->tail == NULL) 
