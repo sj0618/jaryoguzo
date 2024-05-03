@@ -31,7 +31,7 @@ int WhoPrecOp(char op1, char op2)
 		return -1;
 	else
 		return 0;
-}
+}										//1,0,-1로 구분.
 
 void ConvToRPNExp(char exp[])
 {
@@ -42,7 +42,8 @@ void ConvToRPNExp(char exp[])
 	int i, idx=0;
 	char tok, popOp;
 	
-	memset(convExp, 0, sizeof(char)*expLen+1);
+	memset(convExp, 0, sizeof(char)*expLen+1);	
+	//convexp 배열을 전부 0으로 초기화;
 	StackInit(&stack);
 
 	for(i=0; i<expLen; i++)
