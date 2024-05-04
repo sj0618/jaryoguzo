@@ -12,7 +12,7 @@ int main(void)
 	Enqueue(&q, 3);  Enqueue(&q, 4);
 	Enqueue(&q, 5);
 
-	// 데이터 꺼내기 ///////
+	// 데이터 꺼내기 ////
 	while(!QIsEmpty(&q))
 		printf("%d ", Dequeue(&q)); 
 
